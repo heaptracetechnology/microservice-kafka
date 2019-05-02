@@ -1,0 +1,69 @@
+omg: 1
+lifecycle:
+  startup:
+    command: ["microservice-kafta"]
+info:
+  version: 1.0.0
+  title: Kafta
+  description: This is a kafta message queue service
+  contact:
+    name: Rohit Shetty
+    url: https://github.com/ht68rohit
+    email: rohits@heaptrace.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+actions:
+  topic:
+    help: Kafka service to consume stream from topic.
+    events:
+      consume:
+        help: Subscribe to kafka topic and consume stream.
+        arguments:
+          topic:
+            type: string
+            in: requestBody
+            required: true
+            help: The topic name to consume messages from kafka.
+        http: 
+          port: 3000
+          subscribe:
+            method: post
+            path: /consume
+            contentType: application/json
+        output: 
+          contentType: application/json
+          type: object
+          properties:
+            text:
+              help: The message from producer.
+              type: string
+  produce:
+    help: Produce message to topic
+    http:
+      port: 3000
+      method: post
+      path: /produce
+      contentType: application/json
+    arguments:
+      topic:
+        type: string
+        in: requestBody
+        required: true
+        help: The topic name to produce messages in queue.
+      message:
+        type: string
+        in: requestBody
+        required: true
+        help: The message to be send.
+environment:
+  HOST:
+    type: string
+    help: The host address
+  PORT:
+    type: int
+    help: The port number
+
+
+
+    
