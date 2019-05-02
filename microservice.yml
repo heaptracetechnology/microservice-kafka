@@ -64,7 +64,7 @@ actions:
           help: Returns true or false.
           type: string
         message:
-          help: Success message or error message if occured.
+          help: Success message or error message if occurred.
           type: string
         statuscode:
           help: Http status code.
