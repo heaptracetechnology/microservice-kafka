@@ -31,19 +31,13 @@ actions:
             method: post
             path: /consume
             contentType: application/json
-        output:   
+        output: 
           contentType: application/json
           type: object
           properties:
-            success:
-              help: Returns true or false.
+            text:
+              help: The message from producer.
               type: string
-            message:
-              help: Success message or error message if occured.
-              type: string
-            statuscode:
-              help: Http status code.
-              type: int
   produce:
     help: Produce message to topic
     http:
@@ -62,6 +56,19 @@ actions:
         in: requestBody
         required: true
         help: The message to be send.
+    output:   
+      contentType: application/json
+      type: object
+      properties:
+        success:
+          help: Returns true or false.
+          type: string
+        message:
+          help: Success message or error message if occured.
+          type: string
+        statuscode:
+          help: Http status code.
+          type: int
 environment:
   HOST:
     type: string
