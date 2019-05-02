@@ -57,7 +57,7 @@ func consume(responseWriter http.ResponseWriter, request *http.Request) {
 
 	c, err := kafka.NewConsumer(&kafka.ConfigMap{
 		"bootstrap.servers": "localhost",
-		"group.id":          listener.GroupId,
+		"group.id":          listener.Id,
 		"auto.offset.reset": "earliest",
 	})
 
