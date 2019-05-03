@@ -23,8 +23,13 @@ omg build
 
 ##### Kafka Consume
 ```sh
-$  
+$ omg subscribe topic consume -a topic=<TOPIC> -e HOST=<HOST> -e PORT=<PORT>
 ```
+##### Kafka Consume
+```sh
+$ omg run produce -a topic=<TOPIC> -a message=<MESSAGE> -e HOST=<HOST> -e PORT=<PORT> 
+```
+
 ## License
 ### [MIT](https://choosealicense.com/licenses/mit/)
 

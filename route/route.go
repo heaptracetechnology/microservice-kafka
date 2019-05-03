@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/heaptracetechnology/microservice-kafka/message"
+	kafka "github.com/heaptracetechnology/microservice-kafka/kafka"
 )
 
 type Route struct {
@@ -19,16 +19,16 @@ type Routes []Route
 
 var routes = Routes{
 	Route{
-		"Cron",
+		"consume",
 		"POST",
 		"/consume",
-		message.consume,
+		kafka.Consume,
 	},
 	Route{
-		"Cron",
+		"produce",
 		"POST",
 		"/consume",
-		message.produce,
+		kafka.ProduceStream, 
 	},
 }
 

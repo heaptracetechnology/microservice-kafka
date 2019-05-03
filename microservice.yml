@@ -5,7 +5,7 @@ lifecycle:
 info:
   version: 1.0.0
   title: Kafka
-  description: This is a kafka message queue service
+  description: Kafka OMG enable microservice to consume and produce the data.
   contact:
     name: Rohit Shetty
     url: https://github.com/ht68rohit
@@ -13,6 +13,8 @@ info:
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
+
+
 actions:
   topic:
     help: Kafka service to consume stream from topic.
@@ -69,13 +71,17 @@ actions:
         statuscode:
           help: Http status code.
           type: int
+
+
 environment:
   HOST:
     type: string
     help: The host address
+    required: true
   PORT:
     type: int
     help: The port number
+    required: true
 
 
 
