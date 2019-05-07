@@ -25,7 +25,7 @@ omg build
 ```sh
 $ omg subscribe topic consume -a topic=<TOPIC> -e HOST=<HOST> -e PORT=<PORT>
 ```
-##### Kafka Consume
+##### Kafka Produce
 ```sh
 $ omg run produce -a topic=<TOPIC> -a message=<MESSAGE> -e HOST=<HOST> -e PORT=<PORT> 
 ```
