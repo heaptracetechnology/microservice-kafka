@@ -16,23 +16,23 @@ info:
 
 
 actions:
-  topic:
+  topics:
     help: Kafka service to consume stream from topic.
     events:
       consume:
         help: Subscribe to kafka topic and consume stream.
-        arguments:
-          topic:
-            type: string
-            in: requestBody
-            required: true
-            help: The topic name to consume messages from kafka.
         http: 
           port: 3000
           subscribe:
             method: post
             path: /consume
             contentType: application/json
+        arguments:
+          topic:
+            type: string
+            in: requestBody
+            required: true
+            help: The topic name to consume messages from kafka.
         output: 
           contentType: application/json
           type: object

@@ -27,7 +27,7 @@ var routes = Routes{
 	Route{
 		"produce",
 		"POST",
-		"/consume",
+		"/produce",
 		kafka.ProduceStream, 
 	},
 }
