@@ -16,7 +16,7 @@ info:
 
 
 actions:
-  topics:
+  topic:
     help: Kafka service to consume stream from topic.
     events:
       consume:
