@@ -1,0 +1,15 @@
+package kafka
+
+import (
+	"testing"
+
+	. "github.com/onsi/ginkgo"
+	"github.com/onsi/ginkgo/reporters"
+	. "github.com/onsi/gomega"
+)
+
+func TestMessagingSUIT(t *testing.T) {
+	RegisterFailHandler(Fail)
+	junitReporter := reporters.NewJUnitReporter("../test-report/cireport.txt")
+	RunSpecsWithDefaultAndCustomReporters(t, "Messaging Suit", []Reporter{junitReporter})
+}
