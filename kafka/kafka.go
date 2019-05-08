@@ -181,7 +181,7 @@ func ProduceStream(responseWriter http.ResponseWriter, request *http.Request) {
 	} else {
 		p.Flush(15 * 1000)
 
-		message := Message{"true", "Topic created successfully.", http.StatusOK}
+		message := Message{"true", "Message sent successfully.", http.StatusOK}
 		bytes, _ := json.Marshal(message)
 		result.WriteJsonResponse(responseWriter, bytes, http.StatusOK)
 	}

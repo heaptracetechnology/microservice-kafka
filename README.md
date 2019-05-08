@@ -23,11 +23,11 @@ omg build
 
 ##### Kafka Consume
 ```sh
-$ omg subscribe topic consume -a topic=<TOPIC> -e HOST=<HOST> -e PORT=<PORT>
+$ omg subscribe topic consume -a topic=<TOPIC> -e HOST=<HOST>
 ```
 ##### Kafka Produce
 ```sh
-$ omg run produce -a topic=<TOPIC> -a message=<MESSAGE> -e HOST=<HOST> -e PORT=<PORT> 
+$ omg run produce -a topic=<TOPIC> -a message=<MESSAGE> -e HOST=<HOST>
 ```
 
 ## License
