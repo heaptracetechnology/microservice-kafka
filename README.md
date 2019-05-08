@@ -1,5 +1,5 @@
-# Kafta as a microservice
-An OMG service for kafka, it is a message queue serivce.
+# Kafka as a microservice
+An OMG service for kafka, it is a message queue service.
 
 [![Open Microservice Guide](https://img.shields.io/badge/OMG-enabled-brightgreen.svg?style=for-the-badge)](https://microservice.guide)
 
