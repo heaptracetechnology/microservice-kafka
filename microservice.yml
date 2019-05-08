@@ -72,11 +72,7 @@ actions:
 environment:
   HOST:
     type: string
-    help: The host address
-    required: true
-  PORT:
-    type: int
-    help: The port number
+    help: The host address for kafka machine.
     required: true
 
 
