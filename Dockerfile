@@ -1,7 +1,7 @@
 FROM golang
 
 RUN apt-get update 
-RUN apt-get upgrade -y
+
 RUN apt-get install git
 
 RUN git clone https://github.com/edenhill/librdkafka.git \
@@ -10,9 +10,13 @@ RUN git clone https://github.com/edenhill/librdkafka.git \
     && make \
     && make install    
 
-RUN apt-get install pkg-config
+RUN apt-get install pkg-config -y
 
-RUN export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig/
+ENV PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig/
+
+# RUN curl https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.tar.gz -o pkgconfig.tgz \
+#     && tar -zxf pkgconfig.tgz && cd pkg-config-0.29 \
+#     && ./configure && make install
 
 RUN go get github.com/gorilla/mux
 
