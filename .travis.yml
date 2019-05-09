@@ -5,6 +5,11 @@ go:
   - tip
 
 before_install:
+  - git clone https://github.com/edenhill/librdkafka.git \
+    && cd librdkafka \
+    && ./configure --prefix /usr \
+    && make \
+    && make install
   - go get -t -v ./...
 
 script:
