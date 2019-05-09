@@ -2,6 +2,8 @@
 An OMG service for kafka, it is a message queue service.
 
 [![Open Microservice Guide](https://img.shields.io/badge/OMG-enabled-brightgreen.svg?style=for-the-badge)](https://microservice.guide)
+[![Build Status](https://travis-ci.com/heaptracetechnology/microservice-kafka.svg?branch=master)](https://travis-ci.com/heaptracetechnology/microservice-kafka)
+[![codecov](https://codecov.io/gh/heaptracetechnology/microservice-kafka/branch/master/graph/badge.svg)](https://codecov.io/gh/heaptracetechnology/microservice-kafka)
 
 ## [OMG](hhttps://microservice.guide) CLI
 
