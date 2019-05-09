@@ -12,7 +12,7 @@ RUN git clone https://github.com/edenhill/librdkafka.git \
 
 RUN apt-get install pkg-config -y
 
-ENV PKG_CONFIG_PATH=/go/librdkafka/src
+ENV PKG_CONFIG_PATH=/go/librdkafka/src/rdkafka.pc
 
 # RUN curl https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.tar.gz -o pkgconfig.tgz \
 #     && tar -zxf pkgconfig.tgz && cd pkg-config-0.29 \
