@@ -8,9 +8,9 @@ before_install:
   - sudo apt-get install git
   - sudo git clone https://github.com/edenhill/librdkafka.git 
   - cd librdkafka 
-  - ./configure --prefix /usr 
-  - make 
-  - make install
+  - sudo ./configure --prefix /usr 
+  - sudo make 
+  - sudo make install
   - go get -t -v ./...
 
 script:
