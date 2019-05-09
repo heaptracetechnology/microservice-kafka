@@ -17,7 +17,7 @@ import (
 type Subscribe struct {
 	Data      Data   `json:"data"`
 	Endpoint  string `json:"endpoint"`
-	Id        string `json:"id"`
+	ID        string `json:"id"`
 	IsTesting bool   `json:"istesting"`
 	GroupId   string `json:"group_id"`
 }
@@ -41,6 +41,7 @@ var Listener = make(map[string]Subscribe)
 var rtmstarted bool
 var isConsumerRunning bool
 
+//Consume
 func Consume(responseWriter http.ResponseWriter, request *http.Request) {
 
 	var host = os.Getenv("HOST")
@@ -56,12 +57,13 @@ func Consume(responseWriter http.ResponseWriter, request *http.Request) {
 
 	c, _ := kafka.NewConsumer(&kafka.ConfigMap{
 		"bootstrap.servers":  host,
-		"group.id":           listener.Id,
+		"group.id":           listener.ID,
 		"auto.offset.reset":  "earliest",
 		"session.timeout.ms": 6000,
 	})
+	fmt.Println(c)
 
-	Listener[listener.Id] = listener
+	Listener[listener.ID] = listener
 	if !rtmstarted {
 		go KafkaRTM(*c)
 		rtmstarted = true
@@ -115,7 +117,7 @@ func getMessageUpdates(userid string, sub Subscribe, c kafka.Consumer) {
 		source, err := url.Parse(sub.Endpoint)
 		event := cloudevents.Event{
 			Context: cloudevents.EventContextV01{
-				EventID:     sub.Id,
+				EventID:     sub.ID,
 				EventType:   "consume",
 				Source:      cloudevents.URLRef{URL: *source},
 				ContentType: &contentType,
@@ -185,5 +187,4 @@ func ProduceStream(responseWriter http.ResponseWriter, request *http.Request) {
 		bytes, _ := json.Marshal(message)
 		result.WriteJsonResponse(responseWriter, bytes, http.StatusOK)
 	}
-	// Wait for message deliveries before shutting down
 }

@@ -9,7 +9,7 @@ services:
     ports:
       - "9092:9092"
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: 192.168.1.89
+      KAFKA_ADVERTISED_HOST_NAME: 192.168.1.61
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     volumes:
-      - /home/admin1/Desktop/temp-kafka:/var/run/docker.sock
+      - /home/admin1/work/src/github.com/heaptracetechnology/microservice-kafka:/var/run/docker.sock
