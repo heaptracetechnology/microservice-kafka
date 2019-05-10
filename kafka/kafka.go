@@ -88,11 +88,12 @@ func KafkaRTM(c kafka.Consumer) {
 			rtmstarted = false
 			break
 		}
-		time.Sleep(2 * time.Second)
 		if istest {
 			close(quit)
 			break
 		}
+		time.Sleep(2 * time.Second)
+
 	}
 }
 
