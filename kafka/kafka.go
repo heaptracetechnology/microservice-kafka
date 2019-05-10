@@ -86,7 +86,7 @@ func KafkaRTM(c kafka.Consumer) {
 			rtmstarted = false
 			break
 		}
-		time.Sleep(3 * time.Second)
+		time.Sleep(2 * time.Second)
 		if istest {
 			close(quit)
 			break
@@ -137,7 +137,7 @@ func getMessageUpdates(userid string, sub Subscribe, c kafka.Consumer) {
 	}
 }
 
-//Kafka service
+//ProduceStream service
 func ProduceStream(responseWriter http.ResponseWriter, request *http.Request) {
 
 	var host = os.Getenv("HOST")
