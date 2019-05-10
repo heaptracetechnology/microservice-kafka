@@ -4,14 +4,16 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/cloudevents/sdk-go"
-	"github.com/confluentinc/confluent-kafka-go/kafka"
-	"github.com/heaptracetechnology/microservice-kafka/result"
 	"log"
 	"net/http"
 	"net/url"
 	"os"
+	"strings"
 	"time"
+
+	cloudevents "github.com/cloudevents/sdk-go"
+	"github.com/confluentinc/confluent-kafka-go/kafka"
+	"github.com/heaptracetechnology/microservice-kafka/result"
 )
 
 type Subscribe struct {
@@ -97,6 +99,11 @@ func KafkaRTM(c kafka.Consumer) {
 func getMessageUpdates(userid string, sub Subscribe, c kafka.Consumer) {
 
 	contentType := "application/json"
+	s1 := strings.Split(sub.Endpoint, "//")
+	_, ip := s1[0], s1[1]
+	s := strings.Split(ip, ":")
+	_, port := s[0], s[1]
+	sub.Endpoint = "http://192.168.1.88:" + string(port)
 	t, err := cloudevents.NewHTTPTransport(
 		cloudevents.WithTarget(sub.Endpoint),
 		cloudevents.WithStructuredEncoding(),
@@ -122,7 +129,7 @@ func getMessageUpdates(userid string, sub Subscribe, c kafka.Consumer) {
 				Source:      cloudevents.URLRef{URL: *source},
 				ContentType: &contentType,
 			}.AsV01(),
-			Data: msg.Value,
+			Data: string(msg.Value),
 		}
 		resp, err := cloudClient.Send(context.Background(), event)
 		if err != nil {
