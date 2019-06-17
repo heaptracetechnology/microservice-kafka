@@ -1,46 +1,34 @@
-# Kafka as a microservice
-An OMG service for kafka, it is a message queue service.
+# _Kafka_ OMG Microservice
 
-[![Open Microservice Guide](https://img.shields.io/badge/OMG-enabled-brightgreen.svg?style=for-the-badge)](https://microservice.guide)
+[![Open Microservice Guide](https://img.shields.io/badge/OMG%20Enabled-👍-green.svg?)](https://microservice.guide)
 [![Build Status](https://travis-ci.com/heaptracetechnology/microservice-kafka.svg?branch=master)](https://travis-ci.com/heaptracetechnology/microservice-kafka)
 [![codecov](https://codecov.io/gh/heaptracetechnology/microservice-kafka/branch/master/graph/badge.svg)](https://codecov.io/gh/heaptracetechnology/microservice-kafka)
 
-## [OMG](hhttps://microservice.guide) CLI
+An OMG service for kafka, it is a message queue service.
 
-### OMG
+## Direct usage in [Storyscript](https://storyscript.io/):
 
-* omg validate
+```coffee
+>>> kafka produce topic:'topic' message:'messageForTopic'
+{"success":"true/false","message":"success/failure message","statusCode":"HTTPstatusCode"}
 ```
-omg validate
-```
-* omg build
-```
-omg build
-```
-### Test Service
 
-* Test the service by following OMG commands
+Curious to [learn more](https://docs.storyscript.io/)?
 
-### CLI
+✨🍰✨
 
-##### Kafka Consume
-```sh
-$ omg subscribe topic consume -a topic=<TOPIC> -e HOST=<HOST>
-```
+
+## Usage with [OMG CLI](https://www.npmjs.com/package/omg)
 ##### Kafka Produce
-```sh
+```shell
 $ omg run produce -a topic=<TOPIC> -a message=<MESSAGE> -e HOST=<HOST>
 ```
+##### Kafka Consume
+```shell
+$ omg subscribe topic consume -a topic=<TOPIC> -e HOST=<HOST>
+```
+
+**Note**: the OMG CLI requires [Docker](https://docs.docker.com/install/) to be installed.
 
 ## License
-### [MIT](https://choosealicense.com/licenses/mit/)
-
-## Docker
-### Build
-```
-docker build -t microservice-kafka .
-```
-### RUN
-```
-docker run -p 3000:3000 microservice-kafka
-```
+[MIT License](https://github.com/omg-services/kafka/blob/master/LICENSE).
