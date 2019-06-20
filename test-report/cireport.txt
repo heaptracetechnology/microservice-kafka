@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-  <testsuite name="Messaging Suit" tests="1" failures="0" errors="0" time="0">
-      <testcase name="Cron event subscribe Send Message SendMessage Should result http.StatusOK" classname="Messaging Suit" time="6.2943e-05"></testcase>
-  </testsuite>

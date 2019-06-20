@@ -17,7 +17,6 @@ Curious to [learn more](https://docs.storyscript.io/)?
 
 ✨🍰✨
 
-
 ## Usage with [OMG CLI](https://www.npmjs.com/package/omg)
 ##### Kafka Produce
 ```shell
