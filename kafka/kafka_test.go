@@ -11,11 +11,9 @@ import (
 	"os"
 )
 
-var host = os.Getenv("KAFKA_HOST")
-
 var _ = Describe("Produce", func() {
 
-	os.Setenv("HOST", host)
+	os.Setenv("HOST", "")
 
 	produce := Produce{Topic: "hello", Message: "world"}
 	requestBody := new(bytes.Buffer)
@@ -44,7 +42,7 @@ var _ = Describe("Produce", func() {
 var _ = Describe("Kafka consume", func() {
 
 	var sub Subscribe
-	os.Setenv("HOST", host)
+	os.Setenv("HOST", "")
 	sub.Data.Topic = "hello"
 	sub.IsTesting = true
 	sub.Endpoint = "http://webhook.site/bfd1aea6-0562-4087-90a3-68efab7d0302"
