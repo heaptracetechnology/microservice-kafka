@@ -1,7 +1,7 @@
 package main
 
 import (
-	route "github.com/heaptracetechnology/microservice-kafka/route"
+	route "github.com/oms-services/kafka/route"
 	"log"
 	"net/http"
 )

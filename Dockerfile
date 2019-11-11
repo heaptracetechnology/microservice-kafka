@@ -16,11 +16,11 @@ RUN go get github.com/cloudevents/sdk-go
 
 RUN go get github.com/confluentinc/confluent-kafka-go/kafka
 
-WORKDIR /go/src/github.com/heaptracetechnology/microservice-kafka
+WORKDIR /go/src/github.com/oms-services/kafka
 
-ADD . /go/src/github.com/heaptracetechnology/microservice-kafka
+ADD . /go/src/github.com/oms-services/kafka
 
-RUN go install github.com/heaptracetechnology/microservice-kafka
+RUN go install github.com/oms-services/kafka
 
 ENTRYPOINT microservice-kafka
 

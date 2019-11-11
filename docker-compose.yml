@@ -12,4 +12,4 @@ services:
       KAFKA_ADVERTISED_HOST_NAME: 192.168.1.61
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     volumes:
-      - /home/admin1/work/src/github.com/heaptracetechnology/microservice-kafka:/var/run/docker.sock
+      - /home/admin1/work/src/github.com/oms-services/kafka:/var/run/docker.sock

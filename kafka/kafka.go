@@ -12,7 +12,7 @@ import (
 
 	cloudevents "github.com/cloudevents/sdk-go"
 	"github.com/confluentinc/confluent-kafka-go/kafka"
-	"github.com/heaptracetechnology/microservice-kafka/result"
+	"github.com/oms-services/kafka/result"
 )
 
 type Subscribe struct {

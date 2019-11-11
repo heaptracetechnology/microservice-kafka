@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	kafka "github.com/heaptracetechnology/microservice-kafka/kafka"
+	kafka "github.com/oms-services/kafka/kafka"
 )
 
 type Route struct {
