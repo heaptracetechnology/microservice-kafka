@@ -1,7 +1,7 @@
 omg: 1
 lifecycle:
   startup:
-    command: ["microservice-kafka"]
+    command: ['microservice-kafka']
 info:
   version: 1.0.0
   title: Kafka
@@ -14,14 +14,13 @@ info:
     name: MIT
     url: https://opensource.org/licenses/MIT
 
-
 actions:
   topic:
     help: Kafka service to consume message from topic.
     events:
       consume:
         help: Subscribe to kafka topic and consume message.
-        http: 
+        http:
           port: 3000
           subscribe:
             method: post
@@ -33,8 +32,8 @@ actions:
             in: requestBody
             required: true
             help: The topic name to consume messages from kafka.
-        output: 
-          contentType: text/plain
+        output:
+          contentType: application/json
           type: string
   produce:
     help: Produce message to topic
@@ -54,7 +53,7 @@ actions:
         in: requestBody
         required: true
         help: The message to be send.
-    output:   
+    output:
       contentType: application/json
       type: object
       properties:
@@ -68,13 +67,8 @@ actions:
           help: Http status code.
           type: int
 
-
 environment:
   HOST:
     type: string
     help: The host address for kafka machine.
     required: true
-
-
-
-    
