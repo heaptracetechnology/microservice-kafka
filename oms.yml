@@ -2,7 +2,7 @@ oms: 1
 info:
   version: 1.0.0
   title: Kafka
-  description: Kafka OMG enable microservice to consume and produce the data.
+  description: Kafka OMS enable microservice to consume and produce the data.
   contact:
     name: Open Microservices
     url: 'https://openmicroservices.org'
